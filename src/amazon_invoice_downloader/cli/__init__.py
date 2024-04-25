@@ -81,7 +81,7 @@ def run(playwright, args):
     context = browser.new_context()
 
     page = context.new_page()
-    page.goto("https://www.amazon.com/")
+    page.goto("https://www.amazon.in/")
 
     # Sometimes, we are interrupted by a bot check, so let the user solve it
     page.wait_for_selector('span >> text=Hello, sign in', timeout=0).click()
@@ -155,7 +155,7 @@ def run(playwright, args):
                 else:
                     print(f"Saving file [{file_name}]")
                     # Save
-                    link = "https://www.amazon.com/" + order_card.query_selector(
+                    link = "https://www.amazon.in/" + order_card.query_selector(
                         'xpath=//a[contains(text(), "View invoice")]'
                     ).get_attribute("href")
                     invoice_page = context.new_page()
